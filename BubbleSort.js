@@ -1,15 +1,25 @@
-function sort(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        let lowest =i
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[lowest] > arr[j]) {
-                lowest = j
+function sorting(arr) {
+  
+    for (let i = arr.length; i > 0; i--) {
+    
+        for (let j = 0; j < i - 1; j++) {
+            total++
+            if (arr[j] > arr[j + 1]) {
+                // [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+
+                let temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+                swap = true
             }
         }
-        
-       if(i !== lowest) [arr[i],arr[lowest]] = [arr[lowest],arr[i]]
+        if (swap === false) {
+            console.log('break')
+            break;
+        }
     }
     return arr
 }
+// sorting([34,5,2,5,67,5,45])
+sorting([1, 2, 3, 4, 7, 5, 6, 8, 9, 10, 11])
 
-sort([3, 35, 4, 34,5,65, 76])

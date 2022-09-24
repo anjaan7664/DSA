@@ -1,19 +1,15 @@
 function sort(arr) {
-    for (let j = arr.length; j > 0; j--) {
-        let noSwaps = true;
-
-        for (let i = 0; i < j - 1; i++) {
-
-            if (arr[i] > arr[i + 1]) {
-                [arr[i],arr[i + 1]] = [arr[i + 1], arr[i]]
-                noSwaps = false
+    for (let i = 0; i < arr.length; i++) {
+        let lowest =i
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[lowest] > arr[j]) {
+                lowest = j
             }
-
         }
-        if (noSwaps)
-            break;
+        
+       if(i !== lowest) [arr[i],arr[lowest]] = [arr[lowest],arr[i]]
     }
     return arr
 }
 
-sort([3, 35, 4, 66, 32, 3])
+sort([3, 35, 4, 34,5,65, 76])

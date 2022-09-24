@@ -7,13 +7,12 @@ function insertion(arr) {
             arr[j+1] = arr[j]
             j--
         }
-        
         arr[j+1] = currentVal
-      
-        
+
     }
     return arr
 }
-insertion([2, 1, 9, 76, 4])
+console.log(insertion([2, 1, 9, 76, 4]))
+
 // 1 2 9 4
 //
